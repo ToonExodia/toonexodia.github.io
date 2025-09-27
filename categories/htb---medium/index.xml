@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>HTB - Medium on ByteBlogger.net</title>
-    <link>http://localhost:1313/categories/htb---medium/</link>
-    <description>Recent content from ByteBlogger.net</description>
+    <title>HTB - Medium on Home</title>
+    <link>https://ropchainski.com/categories/htb---medium/</link>
+    <description>Recent content from Home</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    
-    <managingEditor>xxx@example.com (Adam R)</managingEditor>
-    <webMaster>xxx@example.com (Adam R)</webMaster>
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
     <lastBuildDate>Mon, 22 Sep 2025 00:00:00 +0000</lastBuildDate>
     
     
-    <atom:link href="http://localhost:1313/categories/htb---medium/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://ropchainski.com/categories/htb---medium/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,17 +20,14 @@
 
     <item>
       <title>HTB - Craft</title>
-      <link>http://localhost:1313/post/htb/medium/craft/</link>
+      <link>https://ropchainski.com/post/htb/medium/craft/</link>
       <pubDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</pubDate>
-      <author>xxx@example.com (Adam R)</author>
-      <guid>http://localhost:1313/post/htb/medium/craft/</guid>
+      
+      <guid>https://ropchainski.com/post/htb/medium/craft/</guid>
       <description>
-        <![CDATA[<h1>HTB - Craft</h1><p>Author: Adam R(xxx@example.com)</p>
+        <![CDATA[<h1>HTB - Craft</h1><p>Author: ToonExodia(<no value>)</p>
         
-          <h1 id="htb---craft">
-<a class="header-anchor" href="#htb---craft"></a>
-HTB - Craft
-</h1><p>Craft is a medium-difficulty Linux box that begins with exploring a public Git service called gogs. This box demonstrates a full attack chain involving an <code>eval()</code> injection vulnerability in a Python API, SQL credential extraction, database enumeration, and lateral movement via exposed SSH keys. Privilege escalation is achieved using a misconfigured Vault setup that allows one-time SSH login as root.</p>
+          <p>Craft is a medium-difficulty Linux box that begins with exploring a public Git service called gogs. This box demonstrates a full attack chain involving an <code>eval()</code> injection vulnerability in a Python API, SQL credential extraction, database enumeration, and lateral movement via exposed SSH keys. Privilege escalation is achieved using a misconfigured Vault setup that allows one-time SSH login as root.</p>
 <h2 id="enumeration">
 <a class="header-anchor" href="#enumeration"></a>
 Enumeration
@@ -41,12 +35,12 @@ Enumeration
 <a class="header-anchor" href="#initial-scan"></a>
 Initial Scan
 </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -sCV -v -p- 10.10.10.110
-</span></span></code></pre></div><p><img src="img/nmap.png" alt="nmap"></p>
+</span></span></code></pre></div><p><img src="imgs/nmap.png" alt="nmap.png"></p>
         
-        <hr><p>Published on 2025-09-22 at <a href='http://localhost:1313/'>ByteBlogger.net</a>, last modified on 2025-09-22</p>]]>
+        <hr><p>Published on 2025-09-22 at <a href='https://ropchainski.com/'>Home</a>, last modified on 2025-09-22</p>]]>
       </description>
       
-        <category>HTB - Medium</category><category>test categori</category>
+        <category>HTB - Medium</category><category>Linux</category>
       
     </item>
     

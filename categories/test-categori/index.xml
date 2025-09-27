@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Test Categori on ByteBlogger.net</title>
+    <title>Test Categori on Home</title>
     <link>http://localhost:1313/categories/test-categori/</link>
-    <description>Recent content from ByteBlogger.net</description>
+    <description>Recent content from Home</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     
-    <managingEditor>xxx@example.com (Adam R)</managingEditor>
-    <webMaster>xxx@example.com (Adam R)</webMaster>
+    <managingEditor>xxx@example.com (ToonExodia)</managingEditor>
+    <webMaster>xxx@example.com (ToonExodia)</webMaster>
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
@@ -25,10 +25,10 @@
       <title>HTB - Craft</title>
       <link>http://localhost:1313/post/htb/medium/craft/</link>
       <pubDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</pubDate>
-      <author>xxx@example.com (Adam R)</author>
+      <author>xxx@example.com (ToonExodia)</author>
       <guid>http://localhost:1313/post/htb/medium/craft/</guid>
       <description>
-        <![CDATA[<h1>HTB - Craft</h1><p>Author: Adam R(xxx@example.com)</p>
+        <![CDATA[<h1>HTB - Craft</h1><p>Author: ToonExodia(xxx@example.com)</p>
         
           <h1 id="htb---craft">
 <a class="header-anchor" href="#htb---craft"></a>
@@ -43,7 +43,7 @@ Initial Scan
 </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -sCV -v -p- 10.10.10.110
 </span></span></code></pre></div><p><img src="img/nmap.png" alt="nmap"></p>
         
-        <hr><p>Published on 2025-09-22 at <a href='http://localhost:1313/'>ByteBlogger.net</a>, last modified on 2025-09-22</p>]]>
+        <hr><p>Published on 2025-09-22 at <a href='http://localhost:1313/'>Home</a>, last modified on 2025-09-22</p>]]>
       </description>
       
         <category>HTB - Medium</category><category>test categori</category>
