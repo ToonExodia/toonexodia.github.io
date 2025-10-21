@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTB - Easy on Home</title>
+    <link>http://localhost:1313/categories/htb---easy/</link>
+    <description>Recent content from Home</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/categories/htb---easy/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>HTB - Outbound</title>
+      <link>http://localhost:1313/post/htb/easy/outbound/</link>
+      <pubDate>Tue, 15 Jul 2025 00:00:00 &#43;0000</pubDate>
+      
+      <guid>http://localhost:1313/post/htb/easy/outbound/</guid>
+      <description>
+        <![CDATA[<h1>HTB - Outbound</h1><p>Author: ToonExodia(<no value>)</p>
+        
+          <p>Outbound is a easy-difficulty Linux box that starts with credentials to access a Roundcube webmail instance. The box demonstrates a chain of vulnerabilities including CVE-2025-49113 (Roundcube RCE), database credential extraction, password decryption, and privilege escalation via CVE-2025-27591 by using the Below monitoring tool.</p>
+<h2 id="enumeration">
+<a class="header-anchor" href="#enumeration"></a>
+Enumeration
+</h2><h3 id="initial-tcp-scan">
+<a class="header-anchor" href="#initial-tcp-scan"></a>
+Initial TCP Scan
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -sCV -v -p- 10.10.11.77
+</span></span></code></pre></div><p><img src="imgs/nmap-recon.png" alt="nmap-scan"></p>
+<p>The scan shows:</p>
+<ul>
+<li><strong>SSH (22/tcp)</strong> </li>
+<li><strong>HTTP (80/tcp)</strong>: With redirect to <code>mail.outbound.htb</code></li>
+</ul>
+<p>Make sure to add the hostname/redirect to <code>/etc/hosts</code>:</p>
+        
+        <hr><p>Published on 2025-07-15 at <a href='http://localhost:1313/'>Home</a>, last modified on 2025-07-15</p>]]>
+      </description>
+      
+        <category>HTB - Easy</category><category>Linux</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>HTB - Titanic</title>
+      <link>http://localhost:1313/post/htb/easy/titanic/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 &#43;0000</pubDate>
+      
+      <guid>http://localhost:1313/post/htb/easy/titanic/</guid>
+      <description>
+        <![CDATA[<h1>HTB - Titanic</h1><p>Author: ToonExodia(<no value>)</p>
+        
+          <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">oxdf@hacky$ nmap -p- --min-rate 10000 10.10.11.55
+</span></span><span class="line"><span class="cl">Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-19 13:45 EST
+</span></span><span class="line"><span class="cl">Nmap scan report for 10.10.11.55
+</span></span><span class="line"><span class="cl">Host is up (0.087s latency).
+</span></span><span class="line"><span class="cl">Not shown: 65533 closed tcp ports (reset)
+</span></span><span class="line"><span class="cl">PORT   STATE SERVICE
+</span></span><span class="line"><span class="cl">22/tcp open  ssh
+</span></span><span class="line"><span class="cl">80/tcp open  http
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Nmap done: 1 IP address (1 host up) scanned in 6.87 seconds
+</span></span><span class="line"><span class="cl">oxdf@hacky$ nmap -p 22,80 -sCV 10.10.11.55
+</span></span><span class="line"><span class="cl">Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-19 13:58 EST
+</span></span><span class="line"><span class="cl">Nmap scan report for 10.10.11.55
+</span></span><span class="line"><span class="cl">Host is up (0.085s latency).
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">PORT   STATE SERVICE VERSION
+</span></span><span class="line"><span class="cl">22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+</span></span><span class="line"><span class="cl">| ssh-hostkey: 
+</span></span><span class="line"><span class="cl">|   256 73:03:9c:76:eb:04:f1:fe:c9:e9:80:44:9c:7f:13:46 (ECDSA)
+</span></span><span class="line"><span class="cl">|_  256 d5:bd:1d:5e:9a:86:1c:eb:88:63:4d:5f:88:4b:7e:04 (ED25519)
+</span></span><span class="line"><span class="cl">80/tcp open  http    Apache httpd 2.4.52
+</span></span><span class="line"><span class="cl">|_http-server-header: Apache/2.4.52 (Ubuntu)
+</span></span><span class="line"><span class="cl">|_http-title: Did not follow redirect to http://titanic.htb/
+</span></span><span class="line"><span class="cl">Service Info: Host: titanic.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+</span></span><span class="line"><span class="cl">Nmap done: 1 IP address (1 host up) scanned in 9.68 seconds
+</span></span></code></pre></div>
+        
+        <hr><p>Published on 2025-02-19 at <a href='http://localhost:1313/'>Home</a>, last modified on 2025-02-19</p>]]>
+      </description>
+      
+        <category>HTB - Easy</category><category>Linux</category>
+      
+    </item>
+    
+  </channel>
+</rss>

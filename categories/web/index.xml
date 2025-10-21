@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Home</title>
+    <link>http://localhost:1313/categories/web/</link>
+    <description>Recent content from Home</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Sun, 05 Oct 2025 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/categories/web/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>Securinets CTF Quals 2025 - Puzzle</title>
+      <link>http://localhost:1313/post/ctfs/securinets-ctf-quals-2025/</link>
+      <pubDate>Sun, 05 Oct 2025 00:00:00 &#43;0000</pubDate>
+      
+      <guid>http://localhost:1313/post/ctfs/securinets-ctf-quals-2025/</guid>
+      <description>
+        <![CDATA[<h1>Securinets CTF Quals 2025 - Puzzle</h1><p>Author: ToonExodia(<no value>)</p>
+        
+          
+        
+        <hr><p>Published on 2025-10-05 at <a href='http://localhost:1313/'>Home</a>, last modified on 2025-10-05</p>]]>
+      </description>
+      
+        <category>CTF</category><category>Web</category>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTF - Web on Home</title>
+    <link>http://localhost:1313/categories/ctf---web/</link>
+    <description>Recent content from Home</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    
+    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    
+    <lastBuildDate>Sun, 05 Oct 2025 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/categories/ctf---web/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>Securinets CTF Quals 2025 - Puzzle</title>
+      <link>http://localhost:1313/post/ctfs/securinets-ctf-quals-2025/</link>
+      <pubDate>Sun, 05 Oct 2025 00:00:00 &#43;0000</pubDate>
+      
+      <guid>http://localhost:1313/post/ctfs/securinets-ctf-quals-2025/</guid>
+      <description>
+        <![CDATA[<h1>Securinets CTF Quals 2025 - Puzzle</h1><p>Author: ToonExodia(<no value>)</p>
+        
+          <p>Puzzle involves needing to register as an editor by modifying the POST request when we log in, after which you make a publish a blog post with the admin as a collaborator. Reading the html, we can then see that we can accept the collaboration request on behalf of the admin. Doing so allows us to see the admins uuid, which allows us to see the admin password when we access <code>/users/&lt;uuid&gt;</code>. Logging in as admin, we see a ban user button, but after reading the provided code, its obvious that this is not the intended solve due to the blacklist of characters. After some further enumeration of the provided code, we see that we can access <code>/data</code> whcih allows us to download <strong>dbconnect.exe</strong> and <strong>secrets.zip</strong>. After that, all we need to do is the classic <code>strings dbconnect.exe | grep pass</code> which gives us a password that we can use to unzip secrets.zip and get the flag.</p>
+        
+        <hr><p>Published on 2025-10-05 at <a href='http://localhost:1313/'>Home</a>, last modified on 2025-10-05</p>]]>
+      </description>
+      
+        <category>CTF - Web</category>
+      
+    </item>
+    
+  </channel>
+</rss>

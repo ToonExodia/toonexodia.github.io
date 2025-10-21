@@ -9,7 +9,7 @@
     
     <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
     
-    <lastBuildDate>Mon, 22 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jul 2025 00:00:00 +0000</lastBuildDate>
     
     
     <atom:link href="https://ropchainski.com/index.xml" rel="self" type="application/rss&#43;xml" />
@@ -21,7 +21,7 @@
     <item>
       <title>HTB - Craft</title>
       <link>https://ropchainski.com/post/htb/medium/craft/</link>
-      <pubDate>Mon, 22 Sep 2025 00:00:00 &#43;0000</pubDate>
+      <pubDate>Tue, 29 Jul 2025 00:00:00 &#43;0000</pubDate>
       
       <guid>https://ropchainski.com/post/htb/medium/craft/</guid>
       <description>
@@ -37,7 +37,7 @@ Initial Scan
 </h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -sCV -v -p- 10.10.10.110
 </span></span></code></pre></div><p><img src="imgs/nmap.png" alt="nmap.png"></p>
         
-        <hr><p>Published on 2025-09-22 at <a href='https://ropchainski.com/'>Home</a>, last modified on 2025-09-22</p>]]>
+        <hr><p>Published on 2025-07-29 at <a href='https://ropchainski.com/'>Home</a>, last modified on 2025-07-29</p>]]>
       </description>
       
         <category>HTB - Medium</category><category>Linux</category>
