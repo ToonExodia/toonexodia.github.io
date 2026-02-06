@@ -102,6 +102,26 @@ Code block test
     
 
     <item>
+      <title>HTB - Cronos</title>
+      <link>http://localhost:1313/post/htb/medium/cronos/</link>
+      <pubDate>Tue, 29 Jul 2025 00:00:00 &#43;0000</pubDate>
+      
+      <guid>http://localhost:1313/post/htb/medium/cronos/</guid>
+      <description>
+        <![CDATA[<h1>HTB - Cronos</h1><p>Author: ToonExodia(<no value>)</p>
+        
+          
+        
+        <hr><p>Published on 2025-07-29 at <a href='http://localhost:1313/'>Home</a>, last modified on 2025-07-29</p>]]>
+      </description>
+      
+        <category>HTB - Medium</category><category>Linux</category>
+      
+    </item>
+    
+    
+
+    <item>
       <title>HTB - Craft</title>
       <link>http://localhost:1313/post/htb/medium/craft/</link>
       <pubDate>Tue, 29 Jul 2025 00:00:00 &#43;0000</pubDate>
@@ -205,24 +225,6 @@ Initial TCP Scan
       </description>
       
         <category>HTB - Easy</category><category>Linux</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title></title>
-      <link>http://localhost:1313/post/htb/medium/cronos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-      
-      <guid>http://localhost:1313/post/htb/medium/cronos/</guid>
-      <description>
-        <![CDATA[<h1></h1><p>Author: ToonExodia(<no value>)</p>
-        
-          
-        
-        <hr><p>Published on 0001-01-01 at <a href='http://localhost:1313/'>Home</a>, last modified on 0001-01-01</p>]]>
-      </description>
       
     </item>
     

